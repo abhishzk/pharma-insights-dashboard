@@ -149,7 +149,7 @@ export const useDataStore = create<DataStore>((set, get) => ({
       // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 600));
       set({ compounds: mockCompounds, isLoading: false });
-    } catch (error) {
+    } catch {
       set({ isLoading: false, error: 'Failed to fetch compounds' });
     }
   },
@@ -161,7 +161,7 @@ export const useDataStore = create<DataStore>((set, get) => ({
       // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 800));
       set({ labResults: mockLabResults, isLoading: false });
-    } catch (error) {
+    } catch {
       set({ isLoading: false, error: 'Failed to fetch lab results' });
     }
   },
@@ -173,7 +173,7 @@ export const useDataStore = create<DataStore>((set, get) => ({
       // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 700));
       set({ dataSets: mockDataSets, isLoading: false });
-    } catch (error) {
+    } catch {
       set({ isLoading: false, error: 'Failed to fetch data sets' });
     }
   },
@@ -194,7 +194,7 @@ export const useDataStore = create<DataStore>((set, get) => ({
         labResults: [...state.labResults, newResult],
         isLoading: false 
       }));
-    } catch (error) {
+    } catch {
       set({ isLoading: false, error: 'Failed to add lab result' });
     }
   },
@@ -229,7 +229,7 @@ export const useDataStore = create<DataStore>((set, get) => ({
         dataSets: [...state.dataSets, newDataset],
         isLoading: false 
       }));
-    } catch (error) {
+    } catch {
       set({ isLoading: false, error: 'Failed to upload dataset' });
     }
   }
